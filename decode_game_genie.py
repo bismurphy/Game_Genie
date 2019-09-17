@@ -5,7 +5,6 @@ letter_dict = {'A':0x0, 'P':0x1, 'Z':0x2, 'L':0x3, 'G':0x4, 'I':0x5, 'T':0x6, 'Y
 code = []
 for c in code_string:
         code += [letter_dict[c]]
-print(code)
 #Address is 2 bytes. First bit is set to 1.
 address = 0x8000 + \
     ((code[3] & 0b00000111) << 12) \
@@ -29,5 +28,5 @@ if len(code) == 8:
   | (code[5] & 0b00001000)       \
   | (code[6] & 0b00000111)       
     print(hex(compare))
-print(hex(address))
-print(hex(data))
+print("Address: " + hex(address))
+print("Data: " + hex(data))
